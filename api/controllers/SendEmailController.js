@@ -13,10 +13,11 @@ module.exports = {
       console.log("req.body: ", req.body);
 
       let authToken = req.headers["authorization"];
+      console.log("req.headers: ", req.headers);
       console.log("authToken: ", authToken);
 
-      let authTokenType = authToken.split(" ")[0];
-      console.log("authTokenType: ", authTokenType);
+      // let authTokenType = authToken.split(" ")[0];
+      // console.log("authTokenType: ", authTokenType);
 
       // if (authTokenType !== "Bearer") {
       //   return res.status(400).json({
