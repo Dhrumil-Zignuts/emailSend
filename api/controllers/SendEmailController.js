@@ -11,6 +11,19 @@ module.exports = {
     try {
       const { to, body, subject, bcc, cc } = req.body;
       console.log("req.body: ", req.body);
+
+      let authToken = req.headers["authorization"];
+      console.log("authToken: ", authToken);
+
+      let authTokenType = authToken.split(" ")[0];
+      console.log("authTokenType: ", authTokenType);
+
+      // if (authTokenType !== "Bearer") {
+      //   return res.status(400).json({
+      //     message: "auth Token not Found",
+      //   });
+      // }
+
       const result = {};
       const transporter = nodemailer.createTransport({
         service: "gmail",
